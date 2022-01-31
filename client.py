@@ -5,7 +5,7 @@ from sys import argv
 
 
 def checkMSG(string):
-    userMSG = ""
+    userMSG = string
     b = b""
     while b != userMSG:
         b += sock.recv(3333)
