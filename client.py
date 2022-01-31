@@ -66,7 +66,7 @@ try:
 
 except socket.error:
     print("Runtime Error")
-    sys.stderr.write("ERROR:")
+    sys.stderr.write("ERROR: ")
     sys.exit(1)
 
 sys.exit(0)
