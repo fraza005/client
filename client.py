@@ -25,11 +25,11 @@ def sendMSG(filename, sock):
         print(f"{filename} not found, try again.")
         quit()
 
-    else:
+    else: 
         while True:
-            msg = fp.read(10000)
-            if msg:
-                sock.send(msg)
+            chunk = fp.read(10000)
+            if chunk:
+                sock.send(chunk)
             else:
                 fp.close()
                 break
@@ -72,5 +72,8 @@ except socket.error:
     sys.exit(1)
 
 sys.exit(0)
+
+
+
 
 
