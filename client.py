@@ -66,7 +66,7 @@ try:
     sock.close()
 
 except socket.error:
-    sys.stderr.write("ERROR: ")
+    sys.stderr.write("ERROR:")
     sys.exit(1)
 
 
