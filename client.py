@@ -2,7 +2,7 @@ import sys
 import socket
 from sys import argv
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 
 def checkMSG(string):
     userMSG = ""
@@ -17,12 +17,12 @@ def checkMSG(string):
             b = b""
 
 
-def sendMSG(fname, sock):
+def sendMSG(filename, sock):
     try:
-        fp = open(fname, "rb")
+        fp = open(filename, "rb")
 
     except FileNotFoundError:
-        print(f"{fname} not found, try again.")
+        print(f"{filename} not found, try again.")
         quit()
 
     else:
@@ -34,6 +34,7 @@ def sendMSG(fname, sock):
                 fp.close()
                 break
 
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 if (len(argv) != 4):
     print("Incorrect parameter entered")
     sys.exit(1)
@@ -66,8 +67,10 @@ try:
     sock.close()
 
 except socket.error:
+    print("Runtime Error")
     sys.stderr.write("ERROR:")
     sys.exit(1)
 
 sys.exit(0)
+
 
